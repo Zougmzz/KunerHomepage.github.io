@@ -1,5 +1,6 @@
-/* 这里是 CSS 样式 */
 body {
+    position: relative;
+    overflow: hidden;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,14 +8,27 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    background-image: url('../images/background-light.png'); /* 默认背景图片 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000; /* 默认文本颜色 */
+}
+
+header, nav, .categories, footer {
+    background-color: rgba(255, 255, 255, 0.2); /* 默认背景颜色，透明度为0.2 */
+    border-radius: 10px; /* 边角圆润 */
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: 10px 0;
+    z-index: 1; /* 确保内容在粒子效果上方 */
 }
 
 header {
     text-align: center;
-    padding: 20px;
-    background-color: #f5f5f5;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .avatar-container {
@@ -48,10 +62,6 @@ header p {
 
 nav {
     text-align: center;
-    padding: 20px;
-    background-color: #e0e0e0;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .search-bar {
@@ -63,10 +73,6 @@ nav {
 }
 
 .categories {
-    padding: 20px;
-    background-color: #fafafa;
-    width: 100%;
-    box-sizing: border-box;
     flex-grow: 1;
 }
 
@@ -108,10 +114,39 @@ nav {
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
     padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
+}
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: url('../images/background-dark.png'); /* 深色模式背景图片 */
+        color: #fff; /* 深色模式文本颜色 */
+    }
+
+    header, nav, .categories, footer {
+        background-color: rgba(0, 0, 0, 0.2); /* 深色模式背景颜色，透明度为0.2 */
+    }
+
+    header p {
+        color: #aaa; /* 深色模式下的简介文本颜色 */
+    }
+
+    .search-bar {
+        background-color: #333;
+        border-color: #666;
+        color: #fff;
+    }
+
+    .categories a {
+        background-color: #333;
+        border-color: #666;
+        color: #fff;
+    }
+
+    .categories a:hover {
+        background-color: #444;
+        border-color: #888;
+    }
 }
