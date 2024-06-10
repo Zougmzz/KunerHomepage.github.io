@@ -1,16 +1,30 @@
+@font-face {
+    font-family: 'LinHaiLiShu';
+    src: url('fonts/临海隶书.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'QianTuXiaoTu';
+    src: url('fonts/千图小兔体.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ChillRoundGothicBold';
+    src: url('fonts/ChillRoundGothic_Bold.ttf') format('truetype');
+}
+
 /* 全局背景颜色 */
 body {
     background-color: #F5DEB3; /* 设置全局背景颜色为米黄色 */
-    color: #333; /* 设置默认文字颜色为深灰色 */
+    color: #8FBC8F; /* 设置默认文字颜色为浅绿色 */
+    font-family: 'LinHaiLiShu', sans-serif;
 }
 
 /* 头部样式 */
 header {
-    background-color: #3E4E50; /* 设置头部背景颜色为深灰色 */
-    color: #fff;
+    background-color: transparent; /* 设置头部背景颜色为透明 */
+    color: #8FBC8F; /* 设置文字颜色为浅绿色 */
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-    border-radius: 8px; /* 圆角边框 */
 }
 
 header h1 {
@@ -26,12 +40,17 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
+    padding: 10px;
+    background: #F5DEB3; /* 设置按钮背景颜色为米黄色 */
+    border: 1px solid #8FBC8F; /* 添加边框以模拟质感 */
+    border-radius: 8px; /* 圆角边框 */
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.2); /* 添加内阴影以模拟按下效果 */
 }
 
 nav ul li a {
-    color: #fff;
+    color: #8FBC8F; /* 设置文字颜色为浅绿色 */
     text-decoration: none;
 }
 
@@ -39,13 +58,16 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* 用户信息样式 */
+/* 用户信息样式 */s
 .user-info {
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
     margin-top: 20px;
+    background: #F5DEB3; /* 背景颜色为米黄色 */
+    padding: 20px;
+    border-radius: 12px; /* 圆角边框 */
 }
 
 .user-info span {
@@ -74,33 +96,32 @@ nav ul li a:hover {
 
 .search-box input[type="text"] {
     padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #8FBC8F; /* 设置边框颜色为浅绿色 */
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.2); /* 添加内阴影以模拟凹陷效果 */
     margin-right: 8px;
 }
 
 .search-box button {
     padding: 8px 12px;
-    background-color: #4CAF50; /* 设置按钮背景颜色为绿色 */
-    color: white;
+    background-color: #8FBC8F; /* 设置按钮背景颜色为浅绿色 */
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 添加阴影效果 */
 }
 
 .search-box button:hover {
-    background-color: #45a049;
+    background-color: #7ca77c;
 }
 
 /* 页脚样式 */
 footer {
-    background-color: #3E4E50; /* 设置页脚背景颜色为深灰色 */
-    color: #fff;
+    background-color: #F5DEB3; /* 设置页脚背景颜色为米黄色 */
+    color: #8FBC8F; /* 设置文字颜色为浅绿色 */
     padding: 20px;
     text-align: center;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-    border-radius: 8px; /* 圆角边框 */
 }
 
 /* 右下角按钮样式 */
@@ -109,16 +130,16 @@ footer {
     bottom: 20px;
     right: 20px;
     padding: 10px 20px;
-    background-color: #4CAF50; /* 设置按钮背景颜色为绿色 */
+    background-color: #8FBC8F; /* 设置按钮背景颜色为浅绿色 */
     color: #fff;
     border: none;
     border-radius: 8px; /* 圆角边框 */
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 添加阴影效果 */
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #7ca77c;
 }
 
 /* 侧边栏样式 */
@@ -128,12 +149,12 @@ footer {
     right: -250px;
     width: 250px;
     height: 100%;
-    background-color: #3E4E50; /* 设置侧边栏背景颜色为深灰色 */
-    color: #fff;
+    background-color: #F5DEB3; /* 设置侧边栏背景颜色为米黄色 */
+    color: #8FBC8F; /* 设置文字颜色为浅绿色 */
     z-index: 1000;
     transition: right 0.5s ease-in-out; /* 添加过渡效果 */
-    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-    border-radius: 8px; /* 圆角边框 */
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.4); /* 添加阴影效果 */
+    border-radius: 12px; /* 圆角边框 */
 }
 
 #sidebar.active {
@@ -150,10 +171,18 @@ footer {
 }
 
 #sidebar ul li a {
-    color: #fff;
+    color: #8FBC8F; /* 设置文字颜色为浅绿色 */
     text-decoration: none;
+    display: block;
+    padding: 10px;
+    background: #F5DEB3; /* 背景颜色为米黄色 */
+    border: 1px solid #8FBC8F; /* 添加边框以模拟质感 */
+    border-radius: 8px; /* 圆角边框 */
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.2); /* 添加内阴影以模拟按下效果 */
 }
 
 #sidebar ul li a:hover {
+    background-color: #7ca77c;
     text-decoration: underline;
 }
+
