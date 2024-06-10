@@ -1,152 +1,145 @@
-body {
-    position: relative;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-image: url('../images/background-light.png'); /* 默认背景图片 */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #000; /* 默认文本颜色 */
-}
-
-header, nav, .categories, footer {
-    background-color: rgba(255, 255, 255, 0.2); /* 默认背景颜色，透明度为0.2 */
-    border-radius: 10px; /* 边角圆润 */
-    padding: 20px;
-    width: 90%;
-    max-width: 1200px;
-    box-sizing: border-box;
-    margin: 10px 0;
-    z-index: 1; /* 确保内容在粒子效果上方 */
-}
-
+/* 头部样式 */
 header {
-    text-align: center;
-}
-
-.avatar-container {
-    width: 15%;
-    padding-top: 15%;
-    position: relative;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid #ccc; /* 头像框 */
-}
-
-.avatar-container .avatar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
 }
 
 header h1 {
-    margin: 10px 0;
-    font-size: 2em;
-}
-
-header p {
-    font-size: 1.2em;
-    color: #666;
-}
-
-nav {
+    margin: 0;
     text-align: center;
 }
 
-.search-bar {
-    width: 80%;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.categories {
-    flex-grow: 1;
-}
-
-.categories h2 {
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.categories ul {
+nav ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.categories li {
-    margin: 10px;
-    width: calc(33.333% - 20px); /* 每行三个分类，减去 margin */
     text-align: center;
 }
 
-.categories a {
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: #333;
-    font-size: 1.2em;
-    display: block;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: background-color 0.3s, border-color 0.3s;
 }
 
-.categories a:hover {
-    background-color: #f0f0f0;
-    border-color: #999;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-footer {
+/* 用户信息样式 */
+.user-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    padding: 10px;
+    margin-top: 20px;
 }
 
-/* 深色模式 */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-image: url('../images/background-dark.png'); /* 深色模式背景图片 */
-        color: #fff; /* 深色模式文本颜色 */
-    }
+.user-info span {
+    display: block;
+    text-align: center;
+    line-height: 1.5;
+}
 
-    header, nav, .categories, footer {
-        background-color: rgba(0, 0, 0, 0.2); /* 深色模式背景颜色，透明度为0.2 */
-    }
+.username {
+    font-weight: bold;
+    margin-top: 10px;
+}
 
-    header p {
-        color: #aaa; /* 深色模式下的简介文本颜色 */
-    }
+.bio {
+    margin-top: 4px;
+    font-size: 16px;
+}
 
-    .search-bar {
-        background-color: #333;
-        border-color: #666;
-        color: #fff;
-    }
+/* 搜索框样式 */
+.search-box {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .categories a {
-        background-color: #333;
-        border-color: #666;
-        color: #fff;
-    }
+.search-box input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+}
 
-    .categories a:hover {
-        background-color: #444;
-        border-color: #888;
-    }
+.search-box button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* 右下角按钮样式 */
+.btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* 侧边栏样式 */
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    z-index: 1000;
+    transition: right 0.5s ease-in-out; /* 添加过渡效果 */
+}
+
+#sidebar.active {
+    right: 0;
+}
+
+#sidebar ul {
+    padding: 20px;
+    list-style: none;
+}
+
+#sidebar ul li {
+    margin-bottom: 10px;
+}
+
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#sidebar ul li a:hover {
+    text-decoration: underline;
 }
